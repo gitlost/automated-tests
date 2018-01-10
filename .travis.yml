@@ -12,6 +12,8 @@ matrix:
       env: WP_VERSION=latest TEST_PACKAGE=all
     - php: 5.6
       env: WP_VERSION=latest TEST_PHAR=nightly
+    - php: 5.6
+      env: WP_VERSION=latest TEST_PACKAGE=all TEST_BUNDLED_DEV_MASTERS=1
 
 before_script:
   - ./ci/prepare.sh

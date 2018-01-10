@@ -9,6 +9,11 @@ WP_CLI_BIN_DIR=${WP_CLI_BIN_DIR-/tmp/wp-cli-phar}
 # Disable XDebug to speed up Composer and test suites.
 phpenv config-rm xdebug.ini
 
+if [[ $TEST_BUNDLED_DEV_MASTERS == '1' ]]
+then
+	sed -i 's/\("wp-cli\/[a-z-]*-command": *\)\("[^"]*"\)/\1"dev-master"/' composer.json
+fi
+
 composer install --no-interaction --prefer-source
 
 CLI_VERSION=$(head -n 1 VERSION)
