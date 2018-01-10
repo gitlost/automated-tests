@@ -11,9 +11,7 @@ phpenv config-rm xdebug.ini
 
 if [[ $TEST_BUNDLED_DEV_MASTERS == '1' ]]
 then
-	pwd
-	ls
-	sed -i 's/\("wp-cli\/[a-z-]*-command": *\)\("[^"]*"\)/\1"dev-master"/' composer.json
+	sed -i 's/"wp-cli\/wp-cli":/"wp-cli\/cache-command": "dev-master", "wp-cli\/checksum-command": "dev-master", "wp-cli\/config-command": "dev-master", "wp-cli\/core-command": "dev-master", "wp-cli\/cron-command": "dev-master", "wp-cli\/db-command": "dev-master", "wp-cli\/entity-command": "dev-master", "wp-cli\/eval-command": "dev-master", "wp-cli\/export-command": "dev-master", "wp-cli\/extension-command": "dev-master", "wp-cli\/import-command": "dev-master", "wp-cli\/language-command": "dev-master", "wp-cli\/media-command": "dev-master", "wp-cli\/package-command": "dev-master", "wp-cli\/rewrite-command": "dev-master", "wp-cli\/role-command": "dev-master", "wp-cli\/scaffold-command": "dev-master", "wp-cli\/search-replace-command": "dev-master", "wp-cli\/server-command": "dev-master", "wp-cli\/shell-command": "dev-master", "wp-cli\/super-admin-command": "dev-master", "wp-cli\/widget-command": "dev-master", &/' composer.json
 	cat composer.json
 fi
 
