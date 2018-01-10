@@ -11,7 +11,10 @@ phpenv config-rm xdebug.ini
 
 if [[ $TEST_BUNDLED_DEV_MASTERS == '1' ]]
 then
+	pwd
+	ls
 	sed -i 's/\("wp-cli\/[a-z-]*-command": *\)\("[^"]*"\)/\1"dev-master"/' composer.json
+	cat composer.json
 fi
 
 composer install --no-interaction --prefer-source
